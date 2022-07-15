@@ -62,7 +62,7 @@ int myprint(char *str, ...)
 
 int main()
 {
-    myprint("test %s %s 888\n", "test2", "test3");
-    printf("test %s %s 888\n", "test2", "test3");
+    myprint("test %s %s\n", "test2", "test3");
+    printf("test %s %s\n", "test2", "test3");
     return (0);
 }
