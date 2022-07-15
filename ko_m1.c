@@ -66,3 +66,9 @@ int main()
     printf("test %s %s\n", "test2", "test3");
     return (0);
 }
+
+/*
+m1 output:
+test test2 test2
+test test2 test3
+*/
