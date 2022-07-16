@@ -25,7 +25,6 @@ int	ft_putstr(char *s)
 	return (write(1, s, ft_strlen(s)));
 }
 
-
 /************************************************************/
 
 int format(va_list ap, char c, int sum)
@@ -38,7 +37,6 @@ int format(va_list ap, char c, int sum)
         sum += ft_putchar('%');
 	return(sum);
 }
-
 
 int myprint(char *str, ...)
 {
