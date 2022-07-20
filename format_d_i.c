@@ -6,13 +6,13 @@
 /*   By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:18:49 by dgoremyk          #+#    #+#             */
-/*   Updated: 2022/07/20 10:36:58 by dgoremyk         ###   ########.fr       */
+/*   Updated: 2022/07/20 10:44:43 by dgoremyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/* writes int value recursively, returns the length */
+/* writes int value, returns the length */
 int	format_d_i(int n)
 {
 	long			long_n;

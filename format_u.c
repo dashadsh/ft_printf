@@ -6,13 +6,13 @@
 /*   By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:18:19 by dgoremyk          #+#    #+#             */
-/*   Updated: 2022/07/20 10:22:03 by dgoremyk         ###   ########.fr       */
+/*   Updated: 2022/07/20 10:45:04 by dgoremyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/* writes unsigned int value recursively, returns the length */
+/* writes unsigned int value, returns the length */
 int	format_u(unsigned int n)
 {
 	long		long_n;

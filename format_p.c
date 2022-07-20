@@ -6,13 +6,13 @@
 /*   By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:17:02 by dgoremyk          #+#    #+#             */
-/*   Updated: 2022/07/20 10:21:33 by dgoremyk         ###   ########.fr       */
+/*   Updated: 2022/07/20 10:44:52 by dgoremyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/* writes ptr adress recursively, returns the length */
+/* writes ptr adress, returns the length */
 int	format_p(unsigned long int n)
 {
 	int	digit;

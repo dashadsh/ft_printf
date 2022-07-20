@@ -6,13 +6,13 @@
 /*   By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:17:33 by dgoremyk          #+#    #+#             */
-/*   Updated: 2022/07/20 10:22:08 by dgoremyk         ###   ########.fr       */
+/*   Updated: 2022/07/20 10:45:11 by dgoremyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/* writes hex value recursively in uppercase, returns the length */
+/* writes hex value in uppercase, returns the length */
 int	format_x_upper(unsigned int n)
 {
 	unsigned int	digit;
