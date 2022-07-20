@@ -6,7 +6,7 @@
 #    By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 23:36:52 by dgoremyk          #+#    #+#              #
-#    Updated: 2022/07/20 10:31:39 by dgoremyk         ###   ########.fr        #
+#    Updated: 2022/07/20 10:51:29 by dgoremyk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,6 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-HEADER = ft_printf.h
-
 RM = rm -f
 
 SRC = ft_printf.c format_c.c format_d_i.c format_p.c \
@@ -25,16 +23,16 @@ SRC = ft_printf.c format_c.c format_d_i.c format_p.c \
 
 OBJ = $(SRC:.c=.o)
 
+$(NAME): $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
+
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HEADER)
-	ar rcs $(NAME) $(OBJ)
-
 clean:
-	$(RM) $(OBJ)
+	@$(RM) $(OBJ)
 	
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 	
 re: fclean all
 
