@@ -6,7 +6,7 @@
 /*   By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:56:30 by dgoremyk          #+#    #+#             */
-/*   Updated: 2022/07/20 10:33:32 by dgoremyk         ###   ########.fr       */
+/*   Updated: 2022/07/20 12:12:55 by dgoremyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	ft_printf(const char *str, ...)
 /*
 int main()
 {
+	ft_printf("hello, %s", "bitcccches");
 	ft_printf("hello, %s", "bitcccches");
 }
 */
