@@ -6,7 +6,7 @@
 /*   By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:56:30 by dgoremyk          #+#    #+#             */
-/*   Updated: 2022/08/19 15:55:45 by dgoremyk         ###   ########.fr       */
+/*   Updated: 2022/08/19 16:20:24 by dgoremyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 detects the formatting flag, passes the value
 to the corresponding function
 
-return sum of char
+returns sum of char
 */
 
 int	ft_format(va_list *ap, char c)
