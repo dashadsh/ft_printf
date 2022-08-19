@@ -6,7 +6,7 @@
 /*   By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:56:30 by dgoremyk          #+#    #+#             */
-/*   Updated: 2022/07/20 12:12:55 by dgoremyk         ###   ########.fr       */
+/*   Updated: 2022/08/19 15:55:45 by dgoremyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,47 @@
 
 /* c s d i u p x X % */
 
-int	format(va_list *ap, char c)
+/*
+detects the formatting flag, passes the value
+to the corresponding function
+
+return sum of char
+*/
+
+int	ft_format(va_list *ap, char c)
 {
 	int	sum;
 
 	sum = 0;
 	if (c == 'c')
-		sum += format_c(va_arg(*ap, int));
+		sum += ft_write_char(va_arg(*ap, int));
 	else if (c == 's')
-		sum += format_s(va_arg(*ap, char *));
+		sum += ft_write_str(va_arg(*ap, char *));
 	else if ((c == 'd') || (c == 'i'))
-		sum += format_d_i(va_arg(*ap, int));
+		sum += ft_write_int(va_arg(*ap, int));
 	else if (c == 'u')
-		sum += format_u(va_arg(*ap, unsigned int));
+		sum += ft_write_unsigned_int(va_arg(*ap, unsigned int));
 	else if (c == 'p')
-		sum += format_p(va_arg(*ap, unsigned long int));
+		sum += ft_write_ptr(va_arg(*ap, unsigned long int));
 	else if (c == 'x')
-		sum += format_x(va_arg(*ap, unsigned int));
+		sum += ft_write_hex(va_arg(*ap, unsigned int));
 	else if (c == 'X')
-		sum += format_x_upper(va_arg(*ap, unsigned int));
+		sum += ft_write_hex_upper(va_arg(*ap, unsigned int));
 	else if (c == '%')
 		sum += write(1, "%", 1);
 	return (sum);
 }
+
+/* 
+reads all func. args
+if % is encountered calles ft_format function to format output
+else ptints chars of the string passed as 1st argument.
+
+solution for passing a var. argument 
+from one function to another on M1 chip:
+pass the address of arg (&ap) to your format function and 
+use a pointer to arg (*ap) there 
+*/
 
 int	ft_printf(const char *str, ...)
 {
@@ -50,10 +68,10 @@ int	ft_printf(const char *str, ...)
 		if (*str == '%')
 		{
 			str++;
-			sum += format(&ap, *str);
+			sum += ft_format(&ap, *str);
 		}
 		else
-			sum += format_c(*str);
+			sum += ft_write_char(*str);
 		str++;
 	}
 	va_end(ap);

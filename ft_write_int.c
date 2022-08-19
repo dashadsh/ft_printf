@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   format_p.c                                         :+:      :+:    :+:   */
+/*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 10:17:02 by dgoremyk          #+#    #+#             */
-/*   Updated: 2022/07/20 10:44:52 by dgoremyk         ###   ########.fr       */
+/*   Created: 2022/07/20 10:18:49 by dgoremyk          #+#    #+#             */
+/*   Updated: 2022/08/19 15:52:07 by dgoremyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/* writes ptr adress, returns the length */
-int	format_p(unsigned long int n)
+/* writes int value, returns the length */
+int	ft_write_int(int n)
 {
-	int	digit;
-	int	length;
+	long			long_n;
+	int				length;
 
-	digit = 0;
+	long_n = (long)n;
 	length = 0;
-	if (n / 16)
-		length += format_p(n / 16);
-	if (length == 0)
-		length += write(1, "0x", 2);
-	digit = n % 16;
-	length += write(1, &"0123456789abcdef"[digit], 1);
+	if (long_n < 0)
+	{
+		length += write(1, "-", 1);
+		long_n = -long_n;
+	}
+	if (long_n / 10)
+		length += ft_write_int(long_n / 10);
+	long_n = long_n % 10 + '0';
+	length += write(1, &long_n, 1);
 	return (length);
 }
