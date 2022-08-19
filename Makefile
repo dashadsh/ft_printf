@@ -6,7 +6,7 @@
 #    By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 23:36:52 by dgoremyk          #+#    #+#              #
-#    Updated: 2022/08/19 16:17:31 by dgoremyk         ###   ########.fr        #
+#    Updated: 2022/08/19 16:24:55 by dgoremyk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,13 @@ SRC = ft_printf.c \
 
 OBJ = $(SRC:.c=.o)
 
-LIBFT_OBJS = libft/*.o
+LIBFT_OBJ = libft/*.o
 
 # creating libftprintf library including libft
 # -C option is for running MAKE command on libft subfolder
 $(NAME): $(OBJ)
 	$(MAKE) -C libft
-	ar rcs $(NAME) $(OBJ) $(LIBFT_OBJS)
+	ar rcs $(NAME) $(OBJ) $(LIBFT_OBJ)
 
 all: $(NAME)
 
