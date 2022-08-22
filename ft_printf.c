@@ -6,7 +6,7 @@
 /*   By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:56:30 by dgoremyk          #+#    #+#             */
-/*   Updated: 2022/08/19 16:20:24 by dgoremyk         ###   ########.fr       */
+/*   Updated: 2022/08/22 16:01:21 by dgoremyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,27 @@ to the corresponding function
 returns sum of char
 */
 
-int	ft_format(va_list *ap, char c)
+int	ft_format(char c, va_list *ap)
 {
 	int	sum;
 
 	sum = 0;
-	if (c == 'c')
+	if (c == '%')
+		sum += write(1, "%", 1);
+	else if (c == 'c')
 		sum += ft_write_char(va_arg(*ap, int));
 	else if (c == 's')
 		sum += ft_write_str(va_arg(*ap, char *));
 	else if ((c == 'd') || (c == 'i'))
-		sum += ft_write_int(va_arg(*ap, int));
+		sum += ft_write_nbr(va_arg(*ap, int));
 	else if (c == 'u')
 		sum += ft_write_unsigned_int(va_arg(*ap, unsigned int));
-	else if (c == 'p')
-		sum += ft_write_ptr(va_arg(*ap, unsigned long int));
 	else if (c == 'x')
 		sum += ft_write_hex(va_arg(*ap, unsigned int));
 	else if (c == 'X')
 		sum += ft_write_hex_upper(va_arg(*ap, unsigned int));
-	else if (c == '%')
-		sum += write(1, "%", 1);
+	else if (c == 'p')
+		sum += ft_write_ptr(va_arg(*ap, unsigned long int));
 	return (sum);
 }
 
@@ -68,7 +68,7 @@ int	ft_printf(const char *str, ...)
 		if (*str == '%')
 		{
 			str++;
-			sum += ft_format(&ap, *str);
+			sum += ft_format(*str, &ap);
 		}
 		else
 			sum += ft_write_char(*str);

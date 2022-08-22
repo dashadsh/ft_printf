@@ -6,7 +6,7 @@
 #    By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/30 23:36:52 by dgoremyk          #+#    #+#              #
-#    Updated: 2022/08/19 16:24:55 by dgoremyk         ###   ########.fr        #
+#    Updated: 2022/08/22 14:43:03 by dgoremyk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS = -Wall -Werror -Wextra
 RM = rm -f
 
 SRC = ft_printf.c \
-	ft_write_char.c ft_write_str.c ft_write_int.c ft_write_unsigned_int.c \
+	ft_write_char.c ft_write_str.c ft_write_nbr.c ft_write_unsigned_int.c \
 	ft_write_ptr.c ft_write_hex.c ft_write_hex_upper.c
 
 OBJ = $(SRC:.c=.o)

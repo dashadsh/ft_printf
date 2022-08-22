@@ -6,7 +6,7 @@
 /*   By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:23:43 by dgoremyk          #+#    #+#             */
-/*   Updated: 2022/08/19 15:54:52 by dgoremyk         ###   ########.fr       */
+/*   Updated: 2022/08/22 14:43:17 by dgoremyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlen(const char *s);
 
 int		ft_write_char(char c);
 int		ft_write_str(char *str);
-int		ft_write_int(int n);
+int		ft_write_nbr(int n);
 int		ft_write_unsigned_int(unsigned int n);
 int		ft_write_ptr(unsigned long int n);
 int		ft_write_hex(unsigned int n);
