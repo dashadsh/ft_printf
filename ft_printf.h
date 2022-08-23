@@ -6,15 +6,15 @@
 /*   By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:23:43 by dgoremyk          #+#    #+#             */
-/*   Updated: 2022/08/22 14:43:17 by dgoremyk         ###   ########.fr       */
+/*   Updated: 2022/08/22 17:02:51 by dgoremyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+/*defines a variable type va_list and three macros*/
 # include <stdarg.h>
-# include <stddef.h>
 # include <unistd.h>
 # include <stdio.h>
 # include "libft/libft.h"

@@ -6,7 +6,7 @@
 /*   By: dgoremyk <dgoremyk@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 09:56:30 by dgoremyk          #+#    #+#             */
-/*   Updated: 2022/08/22 16:01:21 by dgoremyk         ###   ########.fr       */
+/*   Updated: 2022/08/22 16:39:10 by dgoremyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ detects the formatting flag, passes the value
 to the corresponding function
 
 returns sum of char
+
+SIC! (va_list *ap) is for ARM architecture, 
+needed if passing va_list to other function and using it again.
+otherwise (va_list ap) would be enough
 */
 
 int	ft_format(char c, va_list *ap)
@@ -50,10 +54,11 @@ reads all func. args
 if % is encountered calles ft_format function to format output
 else ptints chars of the string passed as 1st argument.
 
-solution for passing a var. argument 
-from one function to another on M1 chip:
-pass the address of arg (&ap) to your format function and 
-use a pointer to arg (*ap) there 
+SIC! (ft_format(*str, &ap)) is for ARM architecture.
+pass the address of args (&ap) to your format function and 
+use a pointer to arg (*ap) there.
+
+otherwise (ft_format(*str, ap)) would be enough
 */
 
 int	ft_printf(const char *str, ...)
